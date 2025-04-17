@@ -9,9 +9,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
   zones                 = var.availability_zones
 
   # Network configuration
-  vnet_subnet_id        = var.vnet_subnet_id
-  pod_subnet_id         = var.pod_subnet_id
-  enable_node_public_ip = false
+  vnet_subnet_id         = var.vnet_subnet_id
+  pod_subnet_id          = var.pod_subnet_id
+  node_public_ip_enabled = false
 
   # Node configuration
   vm_size     = var.vm_size
@@ -26,15 +26,15 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
   spot_max_price  = var.vm_priority == "Spot" ? var.spot_max_price : null
 
   # Autoscaling
-  node_count          = !var.enable_auto_scaling ? var.node_count : null
-  enable_auto_scaling = var.enable_auto_scaling
-  min_count           = var.enable_auto_scaling ? var.auto_scaling_min_nodes : null
-  max_count           = var.enable_auto_scaling ? var.auto_scaling_max_nodes : null
+  node_count           = !var.enable_auto_scaling ? var.node_count : null
+  auto_scaling_enabled = var.enable_auto_scaling
+  min_count            = var.enable_auto_scaling ? var.auto_scaling_min_nodes : null
+  max_count            = var.enable_auto_scaling ? var.auto_scaling_max_nodes : null
 
   # Disk configuration
-  enable_host_encryption = var.enable_host_encryption
-  os_disk_size_gb        = var.os_disk_size_gb
-  os_disk_type           = var.os_disk_type
+  host_encryption_enabled = var.enable_host_encryption
+  os_disk_size_gb         = var.os_disk_size_gb
+  os_disk_type            = var.os_disk_type
 
   # Upgrade configuration
   dynamic "upgrade_settings" {
