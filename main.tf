@@ -15,6 +15,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "this" {
 
   # Node configuration
   vm_size     = var.vm_size
+  os_sku     = var.os_sku
   os_type     = var.os_type
   node_labels = var.node_labels
   node_taints = var.node_taints

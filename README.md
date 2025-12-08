@@ -63,3 +63,4 @@ Examples for this module along with various configurations can be found in the [
 | ---------- | ------- | ------------------------------------------------------------------------------------------------ |
 | 2025-01-25 | v1.0.0  | initial commit                                                                                   |
 | 2025-10-20 | v2.0.1  | Pin minimum version of azurerm to 4.49.0                                                         |
+| 2025-12-08 | v2.0.2  | Added support for `os_sku` to default node pool                                                  |
