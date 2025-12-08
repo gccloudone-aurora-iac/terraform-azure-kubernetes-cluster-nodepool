@@ -54,6 +54,12 @@ variable "vm_size" {
   default     = "Standard_D2s_v3"
 }
 
+variable "os_sku" {
+  description = "Specifies the OS SKU used for this Node Pool."
+  type        = string
+  default     = "Ubuntu"
+}
+
 variable "os_type" {
   description = "The Operating System which should be used for this Node Pool. Possible values are Linux and Windows."
   type        = string
