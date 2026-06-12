@@ -147,7 +147,7 @@ variable "auto_scaling_max_nodes" {
 variable "enable_host_encryption" {
   description = "Should the nodes in this Node Pool have host encryption enabled? Changing this forces a new resource to be created."
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "os_disk_size_gb" {
